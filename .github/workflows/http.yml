@@ -28,5 +28,5 @@ jobs:
             - name: 'mojo / morbo'
               run: |
                 mojo version
-                myapp.pl &
+                ./myapp.pl &
                 mojo get http://127.0.0.1:3000

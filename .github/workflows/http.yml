@@ -22,4 +22,4 @@ jobs:
             - name: 'wget request'
               run: |
                 wget --version
-                wget -S -O https://httpbin.org/headers
+                wget -S -O - https://httpbin.org/headers

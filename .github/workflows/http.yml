@@ -1,0 +1,25 @@
+---
+name: validate YAML files
+
+on:
+    push:
+        branches:
+            - '**'
+
+jobs:
+    yaml:
+        runs-on: ubuntu-20.04
+        steps:
+            - uses: actions/checkout@v2
+            - name: 'set up'
+              run: |
+                apt-get update
+                apt-get -y install curl wget
+            - name: 'curl request'
+              run: |
+                curl --version
+                curl https://httpbin.org/headers
+            - name: 'wget request'
+              run: |
+                wget --version
+                wget -S -O https://httpbin.org/headers

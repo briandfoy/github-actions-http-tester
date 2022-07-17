@@ -15,6 +15,8 @@ jobs:
               run: |
                 sudo apt-get update
                 sudo apt-get -y install curl wget
+                sudo cpan App::Cpan
+                sudo cpan Mojolicious
             - name: 'curl request'
               run: |
                 curl --version
@@ -23,3 +25,8 @@ jobs:
               run: |
                 wget --version
                 wget -S -O - https://httpbin.org/headers
+            - name: 'mojo / morbo'
+              run: |
+                mojo version
+                myapp.pl &
+                mojo get http://127.0.0.1:3000
